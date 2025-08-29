@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club del Corazón - Salud para Adultos Mayores</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-red: #d32f2f;
+            --light-red: #ff6659;
+            --dark-red: #9a0007;
+            --soft-pink: #ffcdd2;
+            --light-bg: #fbe9e7;
+            --white: #ffffff;
+            --text-dark: #37474f;
+            --text-light: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
+            color: var(--text-light);
+            padding: 15px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 2.2rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: var(--soft-pink);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23d32f2f" opacity="0.1"/><path d="M0 0L100 100" stroke="%23d32f2f" stroke-width="2" opacity="0.1"/></svg>');
+            padding: 60px 0;
+            text-align: center;
+            color: var(--text-dark);
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-red);
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-red);
+            color: var(--text-light);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--dark-red);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Sections */
+        .section-title {
+            text-align: center;
+            margin: 50px 0 30px;
+            color: var(--primary-red);
+            font-size: 2.2rem;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-red);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+        
+        /* Cards */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .card {
+            background-color: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            width: 350px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card-img {
+            height: 200px;
+            background-color: var(--primary-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+        
+        .card-content {
+            padding: 20px;
+        }
+        
+        .card h3 {
+            color: var(--primary-red);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        /* Tips Section */
+        .tips {
+            background-color: var(--soft-pink);
+            padding: 50px 0;
+        }
+        
+        .tip-item {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+        
+        .tip-icon {
+            background-color: var(--light-red);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        /* Exercise Section */
+        .exercise {
+            margin: 50px 0;
+        }
+        
+        .exercise-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .exercise-item {
+            background: linear-gradient(145deg, var(--white), #f0f0f0);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .exercise-item h3 {
+            color: var(--primary-red);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--dark-red) 0%, var(--primary-red) 100%);
+            color: var(--text-light);
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--soft-pink);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px 15px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-heart"></i>
+                <span>Club del Corazón</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#consejos">Consejos</a></li>
+                    <li><a href="#ejercicios">Ejercicios</a></li>
+                    <li><a href="#nutricion">Nutrición</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h1>Cuida tu corazón, disfruta la vida</h1>
+            <p>Un espacio dedicado a la salud cardiovascular de los adultos mayores con consejos, ejercicios y nutrición adecuada para cada necesidad.</p>
+            <a href="#consejos" class="btn">Descubrir consejos</a>
+        </div>
+    </section>
+
+    <!-- Consejos Section -->
+    <section class="tips" id="consejos">
+        <div class="container">
+            <h2 class="section-title">Consejos para un Corazón Sano</h2>
+            
+            <div class="tip-item">
+                <div class="tip-icon">
+                    <i class="fas fa-apple-alt"></i>
+                </div>
+                <div>
+                    <h3>Alimentación Balanceada</h3>
+                    <p>Consume frutas, verduras, granos enteros y proteínas magras. Reduce la sal, el azúcar y las grasas saturadas.</p>
+                </div>
+            </div>
+            
+            <div class="tip-item">
+                <div class="tip-icon">
+                    <i class="fas fa-walking"></i>
+                </div>
+                <div>
+                    <h3>Actividad Física Regular</h3>
+                    <p>Realiza al menos 30 minutos de actividad moderada 5 días a la semana. Caminar, nadar o bailar son excelentes opciones.</p>
+                </div>
+            </div>
+            
+            <div class="tip-item">
+                <div class="tip-icon">
+                    <i class="fas fa-bed"></i>
+                </div>
+                <div>
+                    <h3>Descanso Adecuado</h3>
+                    <p>Duerme entre 7-8 horas por noche. Un buen descanso ayuda a reducir el estrés y mantener healthy tu corazón.</p>
+                </div>
+            </div>
+            
+            <div class="tip-item">
+                <div class="tip-icon">
+                    <i class="fas fa-smile"></i>
+                </div>
+                <div>
+                    <h3>Control del Estrés</h3>
+                    <p>Practica técnicas de relajación como meditación, respiración profunda o yoga para mantener tu presión arterial bajo control.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ejercicios Section -->
+    <section class="exercise" id="ejercicios">
+        <div class="container">
+            <h2 class="section-title">Ejercicios para Adultos Mayores</h2>
+            
+            <div class="exercise-list">
+                <div class="exercise-item">
+                    <h3><i class="fas fa-walking"></i> Caminatas Diarias</h3>
+                    <p>Comienza con 15-20 minutos al día y aumenta gradualmente. Mejora la circulación y fortalece el corazón.</p>
+                </div>
+                
+                <div class="exercise-item">
+                    <h3><i class="fas fa-swimmer"></i> Natación Suave</h3>
+                    <p>Ejercicio de bajo impacto ideal para articulaciones. Perfecto para mejorar capacidad cardiovascular.</p>
+                </div>
+                
+                <div class="exercise-item">
+                    <h3><i class="fas fa-spa"></i> Tai Chi</h3>
+                    <p>Arte marcial suave que mejora el equilibrio, flexibilidad y salud cardiovascular. Reduce el estrés.</p>
+                </div>
+                
+                <div class="exercise-item">
+                    <h3><i class="fas fa-bicycle"></i> Bicicleta Estacionaria</h3>
+                    <p>Ejercicio seguro que fortalece piernas y corazón. Comienza con intensidad baja y aumenta progresivamente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nutrition Section -->
+    <section class="tips" id="nutricion">
+        <div class="container">
+            <h2 class="section-title">Alimentación Cardiosaludable</h2>
+            
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-img">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Pescados Grasos</h3>
+                        <p>Salmón, atún y sardinas son ricos en Omega-3, que reduce la inflamación y los triglicéridos.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Frutos Secos</h3>
+                        <p>Nueces, almendras y avellanas en moderación ayudan a reducir el colesterol malo (LDL).</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img">
+                        <i class="fas fa-carrot"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Verduras de Hoja Verde</h3>
+                        <p>Espinacas, acelgas y kale son ricas en vitaminas, minerales y antioxidantes protectores.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Club del Corazón</h3>
+                    <p>Dedicados a mejorar la salud cardiovascular de los adultos mayores through consejos, ejercicios y alimentación adecuada.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contáctanos</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Salud 123, Ciudad</p>
+                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-envelope"></i> info@clubcorazon.com</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <div class="socials">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Club del Corazón. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
