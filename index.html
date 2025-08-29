@@ -28,6 +28,7 @@
             background-color: var(--light-bg);
             color: var(--text-dark);
             line-height: 1.6;
+            font-size: 16px;
         }
         
         .container {
@@ -56,13 +57,31 @@
         .logo {
             display: flex;
             align-items: center;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
         }
         
         .logo i {
             margin-right: 10px;
-            font-size: 2.2rem;
+            font-size: 1.8rem;
+        }
+        
+        /* Mobile menu styles */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+        }
+        
+        .menu-toggle span {
+            height: 3px;
+            width: 100%;
+            background-color: var(--text-light);
+            border-radius: 3px;
+            transition: all 0.3s;
         }
         
         nav ul {
@@ -89,19 +108,20 @@
         /* Hero Section */
         .hero {
             background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23d32f2f" opacity="0.1"/><path d="M0 0L100 100" stroke="%23d32f2f" stroke-width="2" opacity="0.1"/></svg>');
-            padding: 60px 0;
+            padding: 40px 0;
             text-align: center;
             color: var(--text-dark);
         }
         
         .hero h1 {
-            font-size: 2.8rem;
+            font-size: 2.2rem;
             margin-bottom: 20px;
             color: var(--primary-red);
+            line-height: 1.3;
         }
         
         .hero p {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             max-width: 800px;
             margin: 0 auto 30px;
         }
@@ -129,9 +149,9 @@
         /* Sections */
         .section-title {
             text-align: center;
-            margin: 50px 0 30px;
+            margin: 40px 0 30px;
             color: var(--primary-red);
-            font-size: 2.2rem;
+            font-size: 2rem;
             position: relative;
         }
         
@@ -150,15 +170,16 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 30px;
-            margin-bottom: 50px;
+            gap: 25px;
+            margin-bottom: 40px;
         }
         
         .card {
             background-color: var(--white);
             border-radius: 15px;
             overflow: hidden;
-            width: 350px;
+            width: 100%;
+            max-width: 350px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
@@ -168,13 +189,13 @@
         }
         
         .card-img {
-            height: 200px;
+            height: 180px;
             background-color: var(--primary-red);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 4rem;
+            font-size: 3.5rem;
         }
         
         .card-content {
@@ -184,13 +205,13 @@
         .card h3 {
             color: var(--primary-red);
             margin-bottom: 15px;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
         }
         
         /* Tips Section */
         .tips {
             background-color: var(--soft-pink);
-            padding: 50px 0;
+            padding: 40px 0;
         }
         
         .tip-item {
@@ -206,54 +227,60 @@
         .tip-icon {
             background-color: var(--light-red);
             color: white;
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            margin-right: 20px;
+            font-size: 1.3rem;
+            margin-right: 15px;
             flex-shrink: 0;
         }
         
         /* Exercise Section */
         .exercise {
-            margin: 50px 0;
+            margin: 40px 0;
         }
         
         .exercise-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
         
         .exercise-item {
             background: linear-gradient(145deg, var(--white), #f0f0f0);
             border-radius: 15px;
-            padding: 25px;
+            padding: 20px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
         .exercise-item h3 {
             color: var(--primary-red);
             margin-bottom: 15px;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .exercise-item h3 i {
+            margin-right: 10px;
         }
         
         /* Footer */
         footer {
             background: linear-gradient(135deg, var(--dark-red) 0%, var(--primary-red) 100%);
             color: var(--text-light);
-            padding: 40px 0 20px;
-            margin-top: 50px;
+            padding: 30px 0 15px;
+            margin-top: 40px;
         }
         
         .footer-content {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            gap: 30px;
+            gap: 25px;
         }
         
         .footer-section {
@@ -262,8 +289,8 @@
         }
         
         .footer-section h3 {
-            font-size: 1.4rem;
-            margin-bottom: 20px;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
             position: relative;
             padding-bottom: 10px;
         }
@@ -273,9 +300,35 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 50px;
+            width: 40px;
             height: 3px;
             background-color: var(--soft-pink);
+        }
+        
+        .footer-section p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-section i {
+            margin-right: 10px;
+        }
+        
+        .socials {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .socials a {
+            color: var(--text-light);
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+        
+        .socials a:hover {
+            color: var(--soft-pink);
+            transform: translateY(-3px);
         }
         
         .footer-bottom {
@@ -285,28 +338,131 @@
             border-top: 1px solid rgba(255, 255, 255, 0.2);
         }
         
-        /* Responsive */
+        /* Responsive Styles */
         @media (max-width: 768px) {
+            body {
+                font-size: 15px;
+            }
+            
             .header-content {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+            
+            nav {
+                position: fixed;
+                top: 69px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 69px);
+                background: var(--dark-red);
+                transition: all 0.4s ease;
+                z-index: 99;
+                box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                padding: 30px 20px;
+            }
+            
+            nav ul li {
+                margin: 0 0 20px 0;
+            }
+            
+            nav ul li a {
+                font-size: 1.2rem;
+                display: block;
+                padding: 10px 0;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+                margin: 30px 0 20px;
+            }
+            
+            .tip-item {
                 flex-direction: column;
                 text-align: center;
             }
             
-            nav ul {
-                margin-top: 20px;
-                flex-wrap: wrap;
-                justify-content: center;
+            .tip-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
             }
             
-            nav ul li {
-                margin: 5px 15px;
+            .exercise-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .footer-section {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.3rem;
+            }
+            
+            .logo i {
+                font-size: 1.5rem;
             }
             
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 1.6rem;
             }
             
             .hero p {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                padding: 10px 25px;
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .card-img {
+                height: 150px;
+                font-size: 3rem;
+            }
+            
+            .card h3 {
+                font-size: 1.3rem;
+            }
+            
+            .tip-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+            
+            .exercise-item h3 {
                 font-size: 1.2rem;
             }
         }
@@ -320,7 +476,14 @@
                 <i class="fas fa-heart"></i>
                 <span>Club del Corazón</span>
             </div>
-            <nav>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <nav id="nav">
                 <ul>
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#consejos">Consejos</a></li>
@@ -488,5 +651,45 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // JavaScript para el menú móvil
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const nav = document.getElementById('nav');
+            
+            mobileMenu.addEventListener('click', function() {
+                nav.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+            
+            // Cerrar menú al hacer clic en un enlace
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    nav.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                });
+            });
+            
+            // Smooth scrolling para enlaces internos
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
